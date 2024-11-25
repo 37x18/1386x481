@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1386x481</title>
+    <style>
+        body {
+            padding: 25px;
+            background-color: #000000;
+        }
+        p {
+            font-family: "Consolas";
+            font-weight: bold;
+            color: #ffffff;
+            display: inline;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Consolas";
+            font-weight: bold;
+            color: #ffffff;
+            display: inline;
+        }
+        .red {
+            color: #960000;
+        }
+        blockquote {
+            background: #afafaf5d;
+            border-left: 20px solid #ffffff6e;
+            padding: 0.5em 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <blockquote>
+        <h3>FRAGMENTS 1-6</h3><br>
+        <p>
+          I DON'T KNOW WHAT HAPPENED TODAY.<br>
+          IT WAS ALL A BLUR.<br>
+          I ALMOST DIED FROM AN EXPLOSION YESTERDAY.<br>
+          IT'S LIKE IT FOLLOWS ME.<br>
+          EVERYWHERE I GO, EVERYTHING IS CURSED.<br>
+          I DON'T KNOW WHAT I CAN DO TO STOP IT.<br>
+          IT DOESN'T AFFECT ANYONE ELSE LIKE IT AFFECTS ME.<br>
+          I'M GOING TO BUILD A SHRINE AND SEE IF I CAN GET THE CURSE OFF OF ME.<br>
+          THIS IS MY FINAL ENTRY IN THIS DIARY.<br>
+          THE SITE OF MY SHRINE WILL BE THE MOUNTAIN PEAK AT AROUND -1000 -650, AND IF NOTHING IS THERE THEN CONSIDER ME GONE FOREVER.<br>
+          - <span class="obfuscated">AAAAA</span>
+        </p>
+    </blockquote>
+    <blockquote>
+        <h3>FRAGMENTS 7-8</h3><br>
+        <p>
+          WHOEVER IS READING THIS KNOW THAT HE IS HERE.<br>
+          HE IS EVERYWHERE.<br>
+          RUN.<br>
+          NOTHING CAN RID THE CURSE.<br>
+          BUILD CROSSES, DO ALL YOU CAN, BUT HE WILL ALWAYS 
+          <span class="obfuscated">AAAAAAAAA</span>
+        </p>
+    </blockquote>
+    <script>
+      function obfuscateText(element) {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+        const text = element.textContent;
+        let obfuscated = text.split('').map(char => {
+          // Replace each character with a random one
+          return char === ' ' ? ' ' : characters[Math.floor(Math.random() * characters.length)];
+        }).join('');
 
+        element.textContent = obfuscated;
+      }
+
+      function startObfuscation() {
+        const elements = document.querySelectorAll('.obfuscated');
+        elements.forEach(element => {
+          setInterval(() => obfuscateText(element), 10); // Adjust interval speed as needed
+        });
+      }
+
+      startObfuscation();
+    </script>
+  </body>
+</html>
